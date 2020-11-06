@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+
+import { useCity } from "../../context/City";
 
 import {
   Container,
@@ -10,6 +12,18 @@ import {
 } from "./styles";
 
 const Login = () => {
+  const { city, setCity } = useCity();
+
+  function handleChangeCityName(e) {
+    setCity(e.currentTarget.value);
+  }
+
+  function handleSubmitCity(e) {
+    e.preventDefault();
+
+    console.log(city);
+  }
+
   return (
     <Container>
       <Card>
@@ -18,8 +32,16 @@ const Login = () => {
           Bem-vindo à reactweather, uma aplicação sobre previsão do tempo em
           ReactJS
         </Paragraph>
-        <InsertCity type="text" placeholder="Insere o nome da tua cidade" />
-        <Button>Entrar no App</Button>
+        <form>
+          <InsertCity
+            type="text"
+            placeholder="Insere o nome da tua cidade"
+            onChange={handleChangeCityName}
+          />
+          <Button type="submit" onClick={handleSubmitCity}>
+            Entrar no App
+          </Button>
+        </form>
       </Card>
     </Container>
   );
