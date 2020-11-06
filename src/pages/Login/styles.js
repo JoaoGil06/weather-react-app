@@ -14,7 +14,7 @@ export const Card = styled.div`
 
   padding: 70px 80px;
   border-radius: 30px;
-  box-shadow: 6px 10px 6px #a5a0a0;
+  box-shadow: 6px 10px 6px #bcbcbc;
 
   display: flex;
   flex-direction: column;
