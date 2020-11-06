@@ -1,19 +1,20 @@
 import React from "react";
 import GlobalStyles from "./styles/GlobalStyles";
 
-import CityProvider from "./context/City";
+import { useCity } from "./context/City";
 
 import Login from "./pages/Login";
+import Weather from "./pages/Weather";
 
 function App() {
-  return (
-    <CityProvider>
-      <div>
-        <Login />
+  const { city } = useCity();
 
-        <GlobalStyles />
-      </div>
-    </CityProvider>
+  return (
+    <>
+      {city ? <Weather /> : <Login />}
+
+      <GlobalStyles />
+    </>
   );
 }
 
