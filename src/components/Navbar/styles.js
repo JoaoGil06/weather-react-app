@@ -20,7 +20,7 @@ export const Search = styled.input`
   background: #f5f6fa;
   padding: 12px 10px;
   font-size: 16px;
-  color: #0fa2a9;
+  color: #0e323c;
   border-radius: 10px;
 
   &::placeholder {
@@ -44,11 +44,12 @@ export const NavElements = styled.ul`
 `;
 
 export const NavElement = styled.li`
-  color: #2193b0;
+  color: #0e323c;
   font-weight: 600;
   transform: opacity 0.2s;
 
   &:hover {
+    color: #2193b0;
     opacity: 0.8;
   }
 `;

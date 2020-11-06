@@ -30,7 +30,7 @@ export const Title = styled.h1`
 export const Paragraph = styled.p`
   font-size: 16px;
   text-align: center;
-  color: #707070;
+  color: #0e323c;
   margin-bottom: 30px;
 `;
 
@@ -41,7 +41,6 @@ export const InsertCity = styled.input`
   font-size: 16px;
   color: #0fa2a9;
   border-radius: 10px;
-  font-weight: 600;
   text-align: center;
   margin-bottom: 30px;
 

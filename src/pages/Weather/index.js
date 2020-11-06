@@ -1,8 +1,9 @@
 import React from "react";
 
 import Navbar from "../../components/Navbar";
+import MainForecast from "../../components/MainForecast";
 
-import { Container } from "./styles";
+import { Container, Content } from "./styles";
 
 import { useCity } from "../../context/City";
 
@@ -12,8 +13,10 @@ const Weather = () => {
   return (
     <Container>
       <Navbar />
-      <h1>Weather Forecast</h1>
-      <h2>{city}</h2>
+
+      <Content>
+        <MainForecast cityName={city} />
+      </Content>
     </Container>
   );
 };
