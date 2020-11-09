@@ -9,22 +9,48 @@ import {
   MinMax,
 } from "./styles";
 
-import { WiDaySunny } from "weather-icons-react";
+import {
+  WiDaySunny,
+  WiDayThunderstorm,
+  WiRain,
+  WiDayRain,
+  WiSnow,
+  WiCloudy,
+} from "weather-icons-react";
 
-const MainForecast = ({ cityName }) => {
-  return (
-    <Container>
-      <City>{cityName}</City>
+const MainForecast = ({ cityName, weather }) => {
+  if (weather) {
+    return (
+      <Container>
+        <City>{cityName}</City>
 
-      <ForecastGroup>
-        <Temperature>15º</Temperature>
-        <WiDaySunny size={120} />
-      </ForecastGroup>
+        <ForecastGroup>
+          <Temperature>{Math.floor(weather.main.temp)}º</Temperature>
+          {weather.weather[0].main === "Clear" ? <WiDaySunny size={120} /> : ""}
+          {weather.weather[0].main === "Thunderstorm" ? (
+            <WiDayThunderstorm size={120} />
+          ) : (
+            ""
+          )}
+          {weather.weather[0].main === "Drizzle" ? (
+            <WiDayRain size={120} />
+          ) : (
+            ""
+          )}
+          {weather.weather[0].main === "Rain" ? <WiRain size={120} /> : ""}
+          {weather.weather[0].main === "Snow" ? <WiSnow size={120} /> : ""}
+          {weather.weather[0].main === "Clouds" ? <WiCloudy size={120} /> : ""}
+        </ForecastGroup>
 
-      <Predict>Céu Limpo</Predict>
-      <MinMax>Min 5º | Max 20º</MinMax>
-    </Container>
-  );
+        <Predict>{weather.weather[0].description}</Predict>
+        <MinMax>
+          Min {weather.main.temp_min}º | Max {weather.main.temp_max}º
+        </MinMax>
+      </Container>
+    );
+  } else {
+    return <>A Carregar...</>;
+  }
 };
 
 export default MainForecast;
