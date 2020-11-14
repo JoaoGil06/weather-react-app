@@ -41,12 +41,24 @@ export const Button = styled.button`
 
 export const NavElements = styled.ul`
   list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const NavElement = styled.li`
   color: #0e323c;
   font-weight: 600;
   transform: opacity 0.2s;
+
+  > a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &:first-child {
+    margin-right: 20px;
+  }
 
   &:hover {
     color: #2193b0;

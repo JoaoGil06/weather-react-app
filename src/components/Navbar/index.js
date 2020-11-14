@@ -1,6 +1,6 @@
-import React, { useRef } from "react";
+import React from "react";
 
-import { useCity } from "../../context/City";
+import { Link } from "react-router-dom";
 
 import {
   Container,
@@ -13,22 +13,19 @@ import {
 } from "./styles";
 
 const Navbar = () => {
-  const cityNameRef = useRef(null);
-  const { setCity } = useCity();
-
-  function handleSubmitCity(e) {
-    e.preventDefault();
-    setCity(cityNameRef.current.value);
-  }
-
   return (
     <Container>
       <Logo>ReactWeather</Logo>
-      <form onSubmit={handleSubmitCity}>
-        <Search placeholder="Pesquisar uma cidade" ref={cityNameRef} />
-      </form>
+
+      <Search placeholder="Pesquisar uma cidade" />
+
       <NavElements>
-        <NavElement>Procurar no mapa</NavElement>
+        <NavElement>
+          <Link to="/forecast">Ver Previsão</Link>
+        </NavElement>
+        <NavElement>
+          <Link to="/">Procurar no mapa</Link>
+        </NavElement>
       </NavElements>
     </Container>
   );

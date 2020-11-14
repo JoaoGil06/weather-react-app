@@ -1,21 +1,30 @@
 import React, { createContext, useState, useContext } from "react";
 
-export const CityContext = createContext();
+export const LatLngContext = createContext();
 
-export default function CityProvider({ children }) {
-  const [city, setCity] = useState("");
+export default function LatLngProvider({ children }) {
+  const [latLng, setLatLng] = useState({ lat: "", lng: "" });
+
+  if (typeof latLng.lat === "string") {
+    navigator.geolocation.getCurrentPosition((position) => {
+      setLatLng({
+        lat: position.coords.latitude,
+        lng: position.coords.longitude,
+      });
+    });
+  }
 
   return (
-    <CityContext.Provider value={{ city, setCity }}>
+    <LatLngContext.Provider value={{ latLng, setLatLng }}>
       {children}
-    </CityContext.Provider>
+    </LatLngContext.Provider>
   );
 }
 
 //Criar o hook
-export function useCity() {
-  const context = useContext(CityContext);
-  const { city, setCity } = context;
+export function useLatLng() {
+  const context = useContext(LatLngContext);
+  const { latLng, setLatLng } = context;
 
-  return { city, setCity };
+  return { latLng, setLatLng };
 }

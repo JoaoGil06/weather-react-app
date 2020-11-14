@@ -1,17 +1,29 @@
 import React from "react";
 import GlobalStyles from "./styles/GlobalStyles";
 
-import { useCity } from "./context/City";
-
-import Login from "./pages/Login";
+import Map from "./pages/Map";
 import Weather from "./pages/Weather";
 
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+
 function App() {
-  const { city } = useCity();
+  /* const { latLng, setLatLng } = useLatLng();
+
+  navigator.geolocation.getCurrentPosition((position) => {
+    setLatLng({
+      lat: position.coords.latitude,
+      lng: position.coords.longitude,
+    });
+  }); */
 
   return (
     <>
-      {city ? <Weather /> : <Login />}
+      <Router>
+        <Switch>
+          <Route path="/" exact component={Map} />
+          <Route path="/forecast" component={Weather} />
+        </Switch>
+      </Router>
 
       <GlobalStyles />
     </>
