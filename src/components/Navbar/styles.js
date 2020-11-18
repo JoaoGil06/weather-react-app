@@ -15,20 +15,6 @@ export const Logo = styled.h1`
   font-size: 24px;
 `;
 
-export const Search = styled.input`
-  min-width: 300px;
-  background: #f5f6fa;
-  padding: 12px 10px;
-  font-size: 16px;
-  color: #0e323c;
-  border-radius: 10px;
-
-  &::placeholder {
-    color: #dbdbdb;
-    opacity: 0.5;
-  }
-`;
-
 export const Button = styled.button`
   background: linear-gradient(90deg, #2193b0, #6dd5ed);
   color: #fff;

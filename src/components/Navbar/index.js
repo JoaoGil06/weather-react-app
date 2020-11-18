@@ -17,8 +17,6 @@ const Navbar = () => {
     <Container>
       <Logo>ReactWeather</Logo>
 
-      <Search placeholder="Pesquisar uma cidade" />
-
       <NavElements>
         <NavElement>
           <Link to="/forecast">Ver Previsão</Link>

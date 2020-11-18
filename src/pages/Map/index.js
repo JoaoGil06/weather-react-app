@@ -3,6 +3,7 @@ import React, { useCallback } from "react";
 import { useLatLng } from "../../context/City";
 
 import Navbar from "../../components/Navbar";
+import Search from "../../components/Search";
 
 import { Container } from "./styles";
 
@@ -46,6 +47,9 @@ const Map = () => {
   return (
     <Container>
       <Navbar />
+
+      <Search />
+
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         zoom={12}
