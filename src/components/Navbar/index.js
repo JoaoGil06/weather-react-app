@@ -2,15 +2,7 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-import {
-  Container,
-  Logo,
-  Search,
-  Button,
-  NavElements,
-  NavElement,
-  Item,
-} from "./styles";
+import { Container, Logo, NavElements, NavElement } from "./styles";
 
 const Navbar = () => {
   return (

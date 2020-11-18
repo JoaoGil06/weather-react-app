@@ -66,8 +66,8 @@ const Search = () => {
         <ComboboxPopover>
           <ComboboxList>
             {status === "OK" &&
-              data.map(({ id, description }) => (
-                <ComboboxOption key={id} value={description} />
+              data.map(({ id, description }, index) => (
+                <ComboboxOption key={index} value={description} />
               ))}
           </ComboboxList>
         </ComboboxPopover>

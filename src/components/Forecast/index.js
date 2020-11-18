@@ -12,7 +12,6 @@ import {
 } from "weather-icons-react";
 
 const Forecast = ({ forecastPredict }) => {
-  console.log(forecastPredict);
   return (
     <Container>
       {forecastPredict.weather[0].main === "Clear" ? (

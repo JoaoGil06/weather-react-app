@@ -32,14 +32,15 @@ const Map = () => {
     lng: latLng.lng,
   };
 
-  const handleMapClick = useCallback((event) => {
-    setLatLng({
-      lat: event.latLng.lat(),
-      lng: event.latLng.lng(),
-    });
-
-    // Adicionar o history para mandar para o forecast
-  }, []);
+  const handleMapClick = useCallback(
+    (event) => {
+      setLatLng({
+        lat: event.latLng.lat(),
+        lng: event.latLng.lng(),
+      });
+    },
+    [setLatLng]
+  );
 
   if (loadError) return "Erro ao carregar o mapa";
   if (!isLoaded) return "A Carregar...";

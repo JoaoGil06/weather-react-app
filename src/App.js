@@ -7,15 +7,6 @@ import Weather from "./pages/Weather";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
 function App() {
-  /* const { latLng, setLatLng } = useLatLng();
-
-  navigator.geolocation.getCurrentPosition((position) => {
-    setLatLng({
-      lat: position.coords.latitude,
-      lng: position.coords.longitude,
-    });
-  }); */
-
   return (
     <>
       <Router>
