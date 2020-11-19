@@ -24,7 +24,7 @@ const libraries = ["places"];
 const Map = () => {
   const { latLng, setLatLng } = useLatLng();
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+    googleMapsApiKey: "AIzaSyBoCDhrPGIexgwCJXRYK3h3907cwwIsQNE",
     libraries,
   });
   const center = {

@@ -44,7 +44,8 @@ const MainForecast = ({ cityName, weather }) => {
 
         <Predict>{weather.weather[0].description}</Predict>
         <MinMax>
-          Min {weather.main.temp_min}º | Max {weather.main.temp_max}º
+          Min {Math.floor(weather.main.temp_min)}º | Max{" "}
+          {Math.floor(weather.main.temp_max)}º
         </MinMax>
       </Container>
     );
